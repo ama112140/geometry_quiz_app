@@ -110,7 +110,7 @@ def main():
     if not st.session_state.started:
         st.subheader("請輸入班級座號姓名")
         name = st.text_input("姓名")
-        question_count = st.selectbox("選擇測驗題數", [20, 25, 50], index=0)
+        question_count = st.selectbox("選擇測驗題數", [10, 15, 20, 25], index=0)
 
         if st.button("開始測驗"):
             if name.strip() == "":
