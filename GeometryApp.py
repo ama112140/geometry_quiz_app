@@ -51,13 +51,11 @@ def ask_ai_for_hint(question, user_level="國小五年級"):
 # ==========================================
 # 2. 題庫處理
 # ==========================================
-def load_questions_from_file(filename, num_questions=20):
-    def format_equation(eq_str):
-        text = str(eq_str)
-        text = text.replace("*", r" \times ").replace("/", r" \div ")
-        if "$" not in text:
-            text = f"$ {text} $"
-        return text
+def format_equation(eq_str):
+    text = str(eq_str)
+    # 直接替換成 Unicode 的一般符號，拿掉 $ 符號的判斷
+    text = text.replace("*", " × ").replace("/", " ÷ ")
+    return text
 
     if not os.path.exists(filename):
         st.warning(f"找不到題庫檔案 {filename}，將使用測試題目。")
