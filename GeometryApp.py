@@ -254,7 +254,7 @@ def main():
                         "測驗模式": mode_choice
                     }
                     st.session_state.mode = mode_choice
-                    st.session_state.questions = load_questions_from_file("test.json", question_count)
+                    st.session_state.questions = load_questions_from_file("Elementary School Geometry Math.json", question_count)
                     
                     if not st.session_state.questions:
                         st.error("題庫讀取失敗")
